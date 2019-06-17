@@ -11,11 +11,20 @@
   "main": "src/electron-starter.js",
   "scripts": {
     "react-start": "react-scripts start",
-    "build": "react-scripts build",
+    "react-build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "start": "nf start"
+    "start": "nf start",
+    "dist": "yarn run react-build && yarn run electron-builder"
+  },
+  "homepage": "./",
+  "build": {
+    "extends": null,
+    "directories": {
+      "buildResources": "public"
+    },
+    "target": "zip"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,6 +43,8 @@
   },
   "devDependencies": {
     "electron": "^5.0.4",
-    "foreman": "^3.0.1"
+    "electron-builder": "^20.43.0",
+    "foreman": "^3.0.1",
+    "typescript": "^3.5.2"
   }
 }
